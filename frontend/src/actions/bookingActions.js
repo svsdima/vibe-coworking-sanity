@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { client } from '../client';
 import {
 	BOOKING_DETAILS_FAIL,
 	BOOKING_DETAILS_REQUEST,
@@ -10,9 +11,9 @@ import {
 
 export const listBooking = () => async (dispatch) => {
 	try {
-		dispatch({ type: BOOKING_LIST_REQUEST });
+		const query = '*[_type == "booking"]';
 
-		const { data } = await axios.get('/api/booking');
+		const data = await client.fetch(query);
 
 		dispatch({
 			type: BOOKING_LIST_SUCCESS,

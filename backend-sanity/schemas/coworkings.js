@@ -22,19 +22,77 @@ export default {
       type: 'array',
       of: [
         {
-          name: 'icon',
-          title: 'icon',
-          type: 'string',
+          name: 'subway',
+          title: 'Subway',
+          type: 'object',
+          fields: [
+            {
+              name: 'icon',
+              title: 'icon',
+              type: 'string',
+            },
+            {
+              name: 'description',
+              title: 'Description',
+              type: 'string',
+            },
+          ],
         },
         {
-          name: 'description',
-          title: 'Description',
-          type: 'string',
+          name: 'street',
+          title: 'Street',
+          type: 'object',
+          fields: [
+            {
+              name: 'icon',
+              title: 'icon',
+              type: 'string',
+            },
+            {
+              name: 'description',
+              title: 'Description',
+              type: 'string',
+            },
+          ],
         },
         {
-          name: 'link',
-          title: 'Link',
-          type: 'string',
+          name: 'phone',
+          title: 'Phone',
+          type: 'object',
+          fields: [
+            {
+              name: 'icon',
+              title: 'icon',
+              type: 'string',
+            },
+            {
+              name: 'description',
+              title: 'Description',
+              type: 'string',
+            },
+            {
+              name: 'link',
+              title: 'Link',
+              type: 'string',
+            },
+          ],
+        },
+        {
+          name: 'mail',
+          title: 'Mail',
+          type: 'object',
+          fields: [
+            {
+              name: 'icon',
+              title: 'icon',
+              type: 'string',
+            },
+            {
+              name: 'description',
+              title: 'Description',
+              type: 'string',
+            },
+          ],
         },
       ],
     },

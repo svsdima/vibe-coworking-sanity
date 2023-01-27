@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 //Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -7,10 +7,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Btn from '../Btn';
+import CallModal from '../CallModal';
 
 const SwiperAbout = () => {
+	const [isOpenModal, setIsOpenModal] = useState(false);
+
 	return (
 		<div className='swiper-about'>
+			<CallModal open={isOpenModal} close={() => setIsOpenModal(false)} />;
 			<Swiper
 				pagination={{
 					type: 'fraction',
@@ -48,7 +52,12 @@ const SwiperAbout = () => {
 					</div>
 				</div>
 			</Swiper>
-			<Btn classText={'btn'} text={'Написать нам'} icon={'fa-regular fa-hand-back-point-up'} />
+			<Btn
+				classText={'btn'}
+				text={'Написать нам'}
+				icon={'fa-regular fa-hand-back-point-up'}
+				handleClick={() => setIsOpenModal(true)}
+			/>
 		</div>
 	);
 };

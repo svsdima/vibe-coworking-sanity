@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { client } from '../client';
 import {
 	FOUNDERS_DETAILS_FAIL,
 	FOUNDERS_DETAILS_REQUEST,
@@ -10,9 +11,9 @@ import {
 
 export const listFounders = () => async (dispatch) => {
 	try {
-		dispatch({ type: FOUNDERS_LIST_REQUEST });
+		const query = '*[_type == "founders"]';
 
-		const { data } = await axios.get('/api/founders');
+		const data = await client.fetch(query);
 
 		dispatch({
 			type: FOUNDERS_LIST_SUCCESS,

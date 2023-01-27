@@ -1,4 +1,5 @@
 import React from 'react';
+import { urlFor } from '../../client';
 import Btn from '../Btn';
 
 const BookingItem = ({
@@ -13,7 +14,7 @@ const BookingItem = ({
 	return (
 		<div className='booking__item item'>
 			<div className='item__img'>
-				<img className='img-border' src={img} alt={title} />
+				<img className='img-border' src={urlFor(img)} alt={title} />
 				<Btn classText={'btn'} text={'Забронировать'} icon={'fa-regular fa-hand-back-point-up'} />
 			</div>
 			<div className='item__info'>

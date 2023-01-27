@@ -15,6 +15,7 @@ const CoworkingList = () => {
 	useEffect(() => {
 		dispatch(listCoworkings());
 	}, [dispatch]);
+
 	return (
 		<>
 			{loading ? (
@@ -26,8 +27,8 @@ const CoworkingList = () => {
 					{!showMore ? (
 						<>
 							{coworkings
-								.map(({ title, img, info }, index) => (
-									<CoworkingItem title={title} img={img} info={info} key={index} />
+								.map(({ title, img, info, _id }) => (
+									<CoworkingItem title={title} img={img} info={info} id={_id} key={_id} />
 								))
 								.slice(0, 3)}
 							<div className='more' onClick={() => setShowMore(true)}>
@@ -35,8 +36,8 @@ const CoworkingList = () => {
 							</div>
 						</>
 					) : (
-						coworkings.map(({ title, img, info }, index) => (
-							<CoworkingItem title={title} img={img} info={info} key={index} />
+						coworkings.map(({ title, img, info, _id }) => (
+							<CoworkingItem title={title} img={img} info={info} id={_id} key={_id} />
 						))
 					)}
 				</div>

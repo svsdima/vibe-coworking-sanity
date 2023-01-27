@@ -4,36 +4,49 @@ import { Link } from 'react-router-dom';
 import InputMask from 'react-input-mask';
 import { feedbackSaveInfo } from '../../actions/feedbacksAction';
 import SuccessModal from '../SuccessModal';
+import { client } from '../../client';
 
 const CallModal = ({ open, close }) => {
 	const [name, setName] = useState('');
-	const [displayName, setDisplayName] = useState('');
 	const [phone, setPhone] = useState('');
+	const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 	const [check, setCheck] = useState(false);
-	const [success, setSuccess] = useState(false);
-	const dispatch = useDispatch();
+	const [loading, setLoading] = useState(false);
+	const [errorMessage, setErrorMessage] = useState(false);
 
 	const handleSubmit = (e) => {
-		e.preventDefault();
-		dispatch(feedbackSaveInfo(name, phone));
-		setDisplayName(name);
-		setSuccess(true);
-		setName('');
-		setPhone('');
-		setCheck(false);
-		document.body.style.overflow = 'hidden';
-		setTimeout(() => {
-			setSuccess(false);
-			displayName('');
-			document.body.style.overflow = '';
-		}, 5000);
+		if (name === '' || phone === '') {
+			setErrorMessage(true);
+		} else {
+			setLoading(true);
+			setErrorMessage(false);
+
+			const contact = {
+				_type: 'feedbacks',
+				name: name,
+				phone: phone,
+			};
+
+			client.create(contact).then(() => {
+				setLoading(false);
+				setIsFormSubmitted(true);
+				setCheck(false);
+				document.body.style.overflow = 'hidden';
+				setTimeout(() => {
+					setIsFormSubmitted(false);
+					setName('');
+					setPhone('');
+					document.body.style.overflow = '';
+				}, 5000);
+			});
+		}
 	};
 
 	useEffect(() => {
-		if (!success) {
+		if (!isFormSubmitted) {
 			document.body.style.overflow = '';
 		}
-	}, [success]);
+	}, [isFormSubmitted]);
 	return (
 		<article className={open ? 'call-modal active' : 'call-modal'}>
 			<div className='block' onClick={close}></div>
@@ -81,7 +94,13 @@ const CallModal = ({ open, close }) => {
 								</span>
 							</button>
 							<div className='feedback__check'>
-								<input type='checkbox' name='terms' value={check} onChange={!setCheck} required />
+								<input
+									type='checkbox'
+									name='terms'
+									value={check}
+									onChange={() => !setCheck}
+									required
+								/>
 								<p className='feedback__check__text'>
 									Я согласeн(-на) на обработку моих персональных данных в соответствии с{' '}
 									<Link to='/legal-information/terms-of-use'>условиями</Link>
@@ -90,7 +109,11 @@ const CallModal = ({ open, close }) => {
 						</div>
 					</form>
 				</div>
-				{success ? <SuccessModal name={displayName} close={() => setSuccess(false)} /> : ''}
+				{isFormSubmitted ? (
+					<SuccessModal name={name} close={() => setIsFormSubmitted(false)} />
+				) : (
+					''
+				)}
 			</div>
 		</article>
 	);

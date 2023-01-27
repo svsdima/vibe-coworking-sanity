@@ -1,27 +1,28 @@
 import React from 'react';
+import { urlFor } from '../../client';
 
-const CoworkingItem = ({ title, img, info }) => {
+const CoworkingItem = ({ id, title, img, info }) => {
 	return (
-		<div className='coworking__item item'>
+		<div className='coworking__item item' key={id}>
 			<div className='item__img img-border'>
-				<img src={img} alt={title} />
+				<img src={urlFor(img)} alt={title} />
 			</div>
 			<div className='item__info'>
 				<h3 className='item__title'>{title}</h3>
 				<div className='item__info__list'>
-					{info.map(({ icon, text, link }, index) => (
+					{info.map(({ icon, description, link, _key }) => (
 						<>
 							{link ? (
-								<div className='item__info__text' key={index}>
+								<div className='item__info__text' key={_key}>
 									<i className={icon} />
 									<a href={`tel:${link}`}>
-										<span>{text}</span>
+										<span>{description}</span>
 									</a>
 								</div>
 							) : (
-								<div className='item__info__text' key={index}>
+								<div className='item__info__text' key={_key}>
 									<i className={icon} />
-									<span>{text}</span>
+									<span>{description}</span>
 								</div>
 							)}
 						</>

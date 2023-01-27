@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { client } from '../client';
 import {
 	NEWS_DETAILS_FAIL,
 	NEWS_DETAILS_REQUEST,
@@ -10,9 +11,9 @@ import {
 
 export const listNews = () => async (dispatch) => {
 	try {
-		dispatch({ type: NEWS_LIST_REQUEST });
+		const query = '*[_type == "news"]';
 
-		const { data } = await axios.get('/api/news');
+		const data = await client.fetch(query);
 
 		dispatch({
 			type: NEWS_LIST_SUCCESS,

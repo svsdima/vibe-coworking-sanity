@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { client } from '../client';
 import {
 	FEEDBACK_SAVE_FAIL,
 	FEEDBACK_SAVE_REQUEST,
@@ -7,15 +8,9 @@ import {
 
 export const feedbackSaveInfo = (name, phone) => async (dispatch) => {
 	try {
-		dispatch({ type: FEEDBACK_SAVE_REQUEST });
+		const query = '*[_type == "feedbacks"]';
 
-		const config = {
-			headers: {
-				'Content-Type': 'application/json',
-			},
-		};
-
-		const { data } = await axios.post(`/api/feedbacks`, { name, phone }, config);
+		const data = await client.fetch(query);
 
 		dispatch({
 			type: FEEDBACK_SAVE_SUCCESS,

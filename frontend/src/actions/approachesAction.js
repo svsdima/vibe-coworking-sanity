@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { client } from '../client';
 import {
 	APPROACHES_DETAILS_FAIL,
 	APPROACHES_DETAILS_REQUEST,
@@ -10,9 +11,11 @@ import {
 
 export const listApproaches = () => async (dispatch) => {
 	try {
-		dispatch({ type: APPROACHES_LIST_REQUEST });
+		const query = '*[_type == "approaches"]';
 
-		const { data } = await axios.get('/api/approaches');
+		const data = await client.fetch(query);
+
+		dispatch({ type: APPROACHES_LIST_REQUEST });
 
 		dispatch({
 			type: APPROACHES_LIST_SUCCESS,
@@ -29,9 +32,10 @@ export const listApproaches = () => async (dispatch) => {
 
 export const approachDetails = (id) => async (dispatch) => {
 	try {
-		dispatch({ type: APPROACHES_DETAILS_REQUEST });
+		const query = '*[_type == "approaches"]';
 
-		const { data } = await axios.get(`/api/approaches/${id}`);
+		const dataList = await client.fetch(query);
+		const data = dataList(id);
 
 		dispatch({
 			type: APPROACHES_DETAILS_SUCCESS,

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { client } from '../client';
 import {
 	VACANCIES_DETAILS_FAIL,
 	VACANCIES_DETAILS_REQUEST,
@@ -10,9 +11,9 @@ import {
 
 export const listVacancies = () => async (dispatch) => {
 	try {
-		dispatch({ type: VACANCIES_LIST_REQUEST });
+		const query = '*[_type == "vacancies"]';
 
-		const { data } = await axios.get('/api/vacancies');
+		const data = await client.fetch(query);
 
 		dispatch({
 			type: VACANCIES_LIST_SUCCESS,

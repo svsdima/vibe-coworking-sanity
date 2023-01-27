@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { client } from '../client';
 import {
 	COWORKING_DETAILS_FAIL,
 	COWORKING_DETAILS_REQUEST,
@@ -10,9 +11,9 @@ import {
 
 export const listCoworkings = () => async (dispatch) => {
 	try {
-		dispatch({ type: COWORKING_LIST_REQUEST });
+		const query = '*[_type == "coworkings"]';
 
-		const { data } = await axios.get('/api/coworkings');
+		const data = await client.fetch(query);
 
 		dispatch({
 			type: COWORKING_LIST_SUCCESS,

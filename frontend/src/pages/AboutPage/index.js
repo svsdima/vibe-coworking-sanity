@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AboutProfit from '../../components/AboutProfit';
 import AboutVacancies from '../../components/AboutVacancies';
 import Btn from '../../components/Btn';
+import CallModal from '../../components/CallModal';
 import Feedback from '../../components/Feedback';
 import MainTitle from '../../components/MainTitle';
 import SwiperAbout from '../../components/SwiperAbout';
 
 const AboutPage = () => {
+	const [isOpenModal, setIsOpenModal] = useState(false);
+
 	return (
 		<section className='about'>
+			<CallModal open={isOpenModal} close={() => setIsOpenModal(false)} />
 			<MainTitle />
 			<div className='container'>
 				<div className='about__wrapper'>
@@ -37,6 +41,7 @@ const AboutPage = () => {
 									classText={'btn'}
 									text={'Написать нам'}
 									icon={'fa-regular fa-hand-back-point-up'}
+									handleClick={() => setIsOpenModal(true)}
 								/>
 							</div>
 						</div>
@@ -51,6 +56,7 @@ const AboutPage = () => {
 									classText={'btn'}
 									text={'Написать нам'}
 									icon={'fa-regular fa-hand-back-point-up'}
+									handleClick={() => setIsOpenModal(true)}
 								/>
 							</div>
 							<div className='img'>
@@ -169,6 +175,7 @@ const AboutPage = () => {
 										classText={'btn'}
 										text={'Написать нам'}
 										icon={'fa-regular fa-hand-back-point-up'}
+										handleClick={() => setIsOpenModal(true)}
 									/>
 								</div>
 							</div>
