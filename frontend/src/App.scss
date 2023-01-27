@@ -1,0 +1,80 @@
+$container-width: 1220px;
+$big-container-width: 1700px;
+$text: #34343f;
+$text-second: #ce946b;
+$text-third: #ffffff;
+$text-disable: #9f9b9b;
+$btn-active: #e8ba99;
+$btn-disable: #d8d8d8;
+$bg: #363348;
+$burger: #d8d8d8;
+$gray: #dedee5;
+$beauty-number: #f0f0f0;
+$transition: all 0.4s ease;
+$gradient: linear-gradient(138.29deg, #f8e6e2 19.16%, #e9c9c2 81.84%);
+$gradient-hover: linear-gradient(138.29deg, $bg 19.16%, $bg 81.84%);
+
+//base
+@import './styles/base/fonts';
+@import './styles/base/global';
+
+//components
+@import './components/Header/Header';
+@import './components/Footer/Footer';
+
+@import './components/Navbar/Navbar';
+@import './components/NavbarMobile/NavbarMobile';
+
+@import './components/PhoneHeader/PhoneHeader';
+@import './components/PhoneFooter/PhoneFooter';
+
+@import './components/Burger/Burger';
+@import './components/MainTitle/MainTitle';
+
+@import './components/VacanciesTitle/VacanciesTitle';
+@import './components/VacanciesList/VacanciesList';
+
+@import './components/Advantages/Advantages';
+
+@import './components/Loader/Loader';
+@import './components/Message/Message';
+
+@import './components/BeautyProcedures/BeautyProcedures';
+@import './components/SecretSauces/SecretSauces';
+
+@import './components/SwiperAtmosphere/SwiperAtmosphere';
+@import './components/SwiperFounders/SwiperFounders';
+@import './components/SwiperAbout/SwiperAbout';
+
+@import './components/SubscriptionToUpdate/SubscriptionToUpdate';
+@import './components/VacanciesAdvantages/VacanciesAdvantages';
+@import './components/Feedback/Feedback';
+@import './components/SuccessModal/SuccessModal';
+
+@import './components/CoworkingList/CoworkingList';
+@import './components/CoworkingItem/CoworkingItem';
+
+@import './components/BookingItem/BookingItem';
+@import './components/BookingsList/BookingsList';
+
+@import './components/AboutVacancies/AboutVacancies';
+@import './components/AboutProfit/AboutProfit';
+
+@import './components/BtnClose/BtnClose';
+@import './components/BtnBack/BtnBack';
+
+@import './components/VideoReview/VideoReview';
+@import './components/CallModal/CallModal';
+@import './components/ErrorScreen/ErrorScreen';
+
+//pages
+@import './pages/HomePage/HomePage';
+@import './pages/ContactsPage/ContactsPage';
+@import './pages/VacanciesPage/VacanciesPage';
+@import './pages/PricesPage/PricesPage';
+@import './pages/AboutPage/AboutPage';
+@import './pages/NewsPage/NewsPage';
+@import './pages/PrivacyPolicyPage/PrivacyPolicyPage';
+
+//media
+@import './styles/base/media';

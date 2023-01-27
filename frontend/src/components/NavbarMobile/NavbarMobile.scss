@@ -1,0 +1,74 @@
+.navbar-mobile {
+	background-color: $bg;
+	z-index: 10;
+	position: absolute;
+	height: calc(100% - 80px);
+	width: 50%;
+	padding: 40px 20px;
+	top: 0;
+	left: -100%;
+	&.active {
+		left: 0;
+	}
+	&__call {
+		display: grid;
+		grid-template-columns: 30px 1fr;
+		justify-items: flex-start;
+		align-items: center;
+		cursor: pointer;
+		position: relative;
+		&-icon {
+			i {
+				color: $text-second;
+				font-size: 20px;
+				transition: $transition;
+			}
+			position: relative;
+			&::before {
+				content: url('../../assets/oval.svg');
+				width: 15px;
+				height: 15px;
+				position: absolute;
+				transition: all 0.3s ease;
+				bottom: -2px;
+				left: -5px;
+			}
+			&::after {
+				content: url('../../assets/oval_big.svg');
+				position: absolute;
+				width: 15px;
+				height: 15px;
+				transition: all 0.8s ease;
+				bottom: -2px;
+				left: -10px;
+			}
+		}
+	}
+	&__wrapper {
+		display: grid;
+		align-items: flex-start;
+		height: 100%;
+		grid-template-rows: 1fr 4fr;
+	}
+	&__top {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		.btn-close {
+			display: grid;
+		}
+	}
+	&__bottom {
+		display: grid;
+		grid-template-columns: 1fr;
+		align-items: center;
+		justify-items: center;
+	}
+	.navbar {
+		display: grid;
+		grid-template-columns: 1fr;
+		align-items: center;
+		justify-items: flex-start;
+		row-gap: 20px;
+	}
+}

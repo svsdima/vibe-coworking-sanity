@@ -1,0 +1,42 @@
+.call-modal {
+	display: none;
+	opacity: 0;
+	z-index: -5000;
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	background-color: white;
+	top: 0;
+	left: 0;
+	justify-items: center;
+	align-items: center;
+	&__title {
+		font-family: 'Tenor Sans';
+		font-size: 50px;
+		line-height: 58px;
+		text-transform: uppercase;
+		color: #ffffff;
+		text-align: center;
+		span {
+			font-family: 'Tenor Sans';
+			color: $text-second;
+		}
+	}
+	&__wrapper {
+		padding: 150px 40px;
+		border-radius: 50px;
+		position: relative;
+		background-color: $bg;
+	}
+	&.active {
+		display: grid;
+		opacity: 1;
+		z-index: 4000;
+	}
+	.btn-close {
+		display: block;
+		position: absolute;
+		top: 30px;
+		right: 50px;
+	}
+}

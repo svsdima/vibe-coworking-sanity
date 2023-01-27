@@ -1,0 +1,69 @@
+.phone-header {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	justify-items: flex-end;
+	&__link {
+		font-size: 20px;
+		line-height: 26px;
+		letter-spacing: -0.01538px;
+		color: $text-third;
+		font-weight: bold;
+	}
+	&__call {
+		display: grid;
+		grid-template-columns: 30px 1fr;
+		justify-items: flex-start;
+		align-items: center;
+		cursor: pointer;
+		position: relative;
+		&-icon {
+			i {
+				color: $text-second;
+				font-size: 20px;
+				transition: $transition;
+			}
+			position: relative;
+			&::before {
+				content: url('../../assets/oval.svg');
+				width: 15px;
+				height: 15px;
+				position: absolute;
+				transition: all 0.3s ease;
+				bottom: -2px;
+				left: -5px;
+				opacity: 0;
+			}
+			&::after {
+				content: url('../../assets/oval_big.svg');
+				position: absolute;
+				width: 15px;
+				height: 15px;
+				transition: all 0.8s ease;
+				bottom: -2px;
+				left: -10px;
+				opacity: 0;
+			}
+		}
+		&-link {
+			font-size: 14px;
+			line-height: 17px;
+			letter-spacing: 0.466667px;
+			color: $text-second;
+			position: relative;
+			padding-bottom: 5px;
+			transition: $transition;
+			&::before {
+				content: '';
+				position: absolute;
+				width: 0;
+				height: 1px;
+				bottom: 0;
+				left: 50%;
+				background-color: $text-second;
+				transform: translateX(-50%);
+				transition: $transition;
+			}
+		}
+	}
+}

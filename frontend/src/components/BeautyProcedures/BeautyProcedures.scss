@@ -1,0 +1,59 @@
+.beauty-procedures {
+	padding-top: 60px;
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		justify-items: center;
+		align-items: flex-start;
+		row-gap: 50px;
+	}
+	.item {
+		&__text {
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 24px;
+			text-align: center;
+			color: $text;
+		}
+		&__number {
+			position: relative;
+			&__img {
+				position: absolute;
+				left: -10%;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			&__title {
+				font-family: 'Tenor Sans';
+				font-style: normal;
+				font-weight: 400;
+				font-size: 160px;
+				line-height: 187px;
+				text-align: center;
+				color: $beauty-number;
+				margin: 0;
+			}
+		}
+		&__1 {
+			grid-column: 1;
+			grid-row: 1;
+		}
+		&__2 {
+			grid-column: 3;
+			grid-row: 1;
+		}
+		&__3 {
+			grid-column: 5;
+			grid-row: 1;
+		}
+		&__4 {
+			grid-column: 2;
+			grid-row: 2;
+		}
+		&__5 {
+			grid-column: 4;
+			grid-row: 2;
+		}
+	}
+}

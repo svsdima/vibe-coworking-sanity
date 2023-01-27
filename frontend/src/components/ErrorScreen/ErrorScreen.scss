@@ -1,0 +1,17 @@
+.error-screen {
+	padding: 100px 0;
+	&__wrapper {
+		display: grid;
+		justify-items: center;
+		align-items: center;
+	}
+	&__text {
+		text-align: center;
+	}
+	.text {
+		text-align: center;
+	}
+	.btn {
+		margin: 50px auto 0;
+	}
+}

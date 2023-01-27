@@ -1,0 +1,22 @@
+.message {
+	&.danger,
+	&.green,
+	&.info {
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 17px;
+		text-align: center;
+		text-transform: uppercase;
+		padding: 20px;
+		background-color: $bg;
+	}
+	&.danger {
+		color: red;
+	}
+	&.green {
+		color: green;
+	}
+	&.info {
+		color: $text;
+	}
+}

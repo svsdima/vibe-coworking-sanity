@@ -1,0 +1,223 @@
+* {
+	font-family: 'TTNorms';
+	color: $text;
+	transition: $transition;
+}
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+	height: 100%;
+}
+body {
+	height: 100%;
+	margin: 0;
+	overflow-x: hidden;
+}
+main {
+	overflow-x: hidden;
+}
+img {
+	display: inline-block;
+	max-width: 100%;
+}
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+p {
+	margin: 0;
+}
+li {
+	list-style-type: none;
+}
+a {
+	text-decoration: none;
+}
+h2 {
+	font-family: 'History Pro';
+	font-size: 24px;
+	line-height: 40px;
+}
+table {
+	margin: 0 auto;
+}
+td,
+th {
+	padding: 10px 20px;
+}
+tr {
+	border-bottom: 1px solid #ccc;
+}
+td {
+	text-align: center;
+	border-bottom: 1px solid #eee;
+}
+i {
+	font-size: 25px;
+}
+#root {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+main {
+	flex: 1 0 auto;
+	padding: 75px 0 0 0;
+}
+.footer {
+	flex: 0 0 auto;
+}
+.big-container {
+	margin: 0 auto;
+	max-width: $big-container-width;
+	padding: 0 20px;
+}
+.container {
+	margin: 0 auto;
+	max-width: $container-width;
+	padding: 0 20px;
+}
+.title {
+	font-family: 'Tenor Sans';
+	font-size: 50px;
+	line-height: 58px;
+	text-align: center;
+	max-width: 900px;
+	margin: 0 auto;
+	color: $text;
+	text-transform: uppercase;
+	span {
+		font-family: 'Tenor Sans';
+		color: $text-second;
+	}
+}
+.subtitle {
+	font-family: 'Tenor Sans';
+	font-size: 50px;
+	line-height: 58px;
+	color: $text;
+	margin: 0;
+}
+.text {
+	padding: 30px 0;
+	font-size: 20px;
+	line-height: 32px;
+	color: $text;
+	&-center {
+		text-align: center;
+		max-width: 900px;
+		margin: 20px auto;
+	}
+}
+.main-text {
+	font-size: 24px;
+	line-height: 39px;
+	color: $text;
+	span {
+		font-weight: bold;
+	}
+}
+.btn {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	background: linear-gradient(314.24deg, #c88c61 25.11%, #ebbe9c 88.64%);
+	box-shadow: inset 0px 0px 9px #e5b79a;
+	border-radius: 10px;
+	padding: 20px 30px;
+	cursor: pointer;
+	position: relative;
+	span {
+		position: relative;
+		font-size: 20px;
+		line-height: 12px;
+		letter-spacing: 0.9px;
+		color: white;
+		padding-bottom: 10px;
+		i {
+			padding-left: 15px;
+			color: white;
+			text-transform: uppercase;
+		}
+		&::before {
+			content: '';
+			position: absolute;
+			width: 0;
+			height: 2px;
+			background-color: $text-second;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			transition: $transition;
+		}
+	}
+	&__title {
+		padding: 30px 45px;
+		&::before {
+			content: 'присоединяйся к нам !! :)';
+			max-width: 200px;
+			font-style: italic;
+			font-weight: 400;
+			font-size: 13px;
+			line-height: 14px;
+			color: white;
+			position: absolute;
+			bottom: -25px;
+			right: -50%;
+			cursor: auto;
+			pointer-events: none;
+		}
+		&::after {
+			content: url('../../assets/oval_text.svg');
+			position: absolute;
+			top: 50%;
+			right: -25%;
+			cursor: auto;
+			pointer-events: none;
+		}
+	}
+	&__category {
+		cursor: pointer;
+		background: $burger;
+		border: 1.2px solid #c8c8c8;
+		padding: 20px 30px;
+		border-radius: 6px;
+		span {
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 19px;
+			color: #9f9b9b;
+			text-transform: uppercase;
+		}
+		&.active {
+			background: #e8ba99;
+			border: 1.2px solid #ce946b;
+			border-radius: 6px;
+			span {
+				color: #c88c61;
+			}
+		}
+	}
+}
+.more {
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 17px;
+	text-transform: uppercase;
+	color: $text-second;
+	cursor: pointer;
+}
+.img-border {
+	background-color: white;
+	border: 2px solid #dedee5;
+	padding: 10px;
+	box-shadow: 15px 15px 15px 0px rgba($gray, 0.2);
+	max-width: calc(100% - 20px);
+}
+.block {
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	top: 0;
+	left: 0;
+}

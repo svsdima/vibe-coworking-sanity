@@ -1,0 +1,64 @@
+.advantages {
+	padding: 80px 0 200px 0;
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		column-gap: 195px;
+		row-gap: 80px;
+		align-items: flex-start;
+	}
+	.item {
+		&__title {
+			font-family: 'Tenor Sans';
+			font-style: normal;
+			font-weight: 400;
+			font-size: 100px;
+			line-height: 80px;
+			text-transform: uppercase;
+			color: $text-second;
+		}
+		&__subtitle {
+			font-family: 'Tenor Sans';
+			font-style: normal;
+			font-weight: 400;
+			font-size: 40px;
+			line-height: 47px;
+			text-transform: lowercase;
+
+			color: $text-second;
+		}
+		&__text {
+			font-weight: 700;
+			font-size: 20px;
+			line-height: 26px;
+			text-transform: lowercase;
+			color: $text;
+		}
+	}
+	&__text {
+		position: relative;
+		margin-top: 80px;
+		:first-child {
+			&::before {
+				content: '';
+				width: 10px;
+				height: 10px;
+				background: linear-gradient(138.29deg, #f8e6e2 19.16%, #e9c9c2 81.84%);
+				box-shadow: 0px 2px 4px #f0d8d3;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+				border-radius: 100%;
+			}
+		}
+		p {
+			position: relative;
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 26px;
+			color: $text;
+			padding-left: 20px;
+		}
+	}
+}

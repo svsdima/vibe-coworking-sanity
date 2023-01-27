@@ -1,0 +1,40 @@
+.header {
+	background-color: $bg;
+	padding: 20px 0;
+	&__logo {
+		display: grid;
+		grid-template-columns: 110px 1fr;
+		align-items: center;
+		position: relative;
+		column-gap: 20px;
+		.logo {
+			position: relative;
+			&::before {
+				content: '';
+				position: absolute;
+				width: 1px;
+				height: 100%;
+				background-color: $text-third;
+				top: 50%;
+				left: calc(100% + 10px);
+				transform: translateY(-50%);
+			}
+		}
+	}
+	&__wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		column-gap: 30px;
+		align-items: center;
+	}
+	&__text {
+		display: grid;
+		align-items: center;
+		p {
+			color: $text-third;
+			font-size: 12px;
+			line-height: 14px;
+			letter-spacing: 0.4px;
+		}
+	}
+}

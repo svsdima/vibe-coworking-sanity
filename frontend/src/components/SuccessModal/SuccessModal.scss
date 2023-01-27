@@ -1,0 +1,43 @@
+.success-modal {
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	background-color: white;
+	top: 0;
+	left: 0;
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	z-index: 5000;
+	&__wrapper {
+		padding: 150px 100px;
+		background-color: $bg;
+		border-radius: 50px;
+		position: relative;
+	}
+	&__title {
+		font-family: 'Tenor Sans';
+		font-size: 50px;
+		line-height: 58px;
+		text-transform: uppercase;
+		color: #ffffff;
+		span {
+			font-family: 'Tenor Sans';
+			color: $text-second;
+		}
+	}
+	&__text {
+		font-size: 24px;
+		line-height: 39px;
+		color: #ffffff;
+		span {
+			color: $text-second;
+		}
+	}
+	.btn-close {
+		display: block;
+		position: absolute;
+		top: 30px;
+		right: 50px;
+	}
+}

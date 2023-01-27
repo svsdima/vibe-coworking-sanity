@@ -1,0 +1,53 @@
+.about-profit {
+	padding: 60px 0 210px 0;
+	.about__title {
+		text-align: left;
+		padding-bottom: 100px;
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		justify-items: center;
+		align-items: flex-end;
+		row-gap: 50px;
+	}
+	.item {
+		position: relative;
+		&__text {
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 24px;
+			text-align: center;
+			color: $text;
+		}
+		&__number {
+			position: absolute;
+			top: -50%;
+			left: 40%;
+			font-family: 'Tenor Sans';
+			font-style: normal;
+			font-weight: 400;
+			font-size: 65px;
+			line-height: 76px;
+			text-align: center;
+			color: $beauty-number;
+			margin: 0;
+			z-index: 1;
+		}
+		&__info {
+			position: inherit;
+			z-index: 50;
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 10px;
+			align-items: flex-end;
+			justify-items: center;
+		}
+		&__text {
+			font-weight: 900;
+			font-size: 12px;
+			line-height: 12px;
+			color: $text-second;
+		}
+	}
+}

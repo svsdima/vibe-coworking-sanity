@@ -1,0 +1,56 @@
+.coworking__item {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 80px;
+	row-gap: 100px;
+	align-items: flex-start;
+	padding-bottom: 80px;
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: $gray;
+	}
+	.item {
+		&__img {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		&__title {
+			font-family: 'Tenor Sans';
+			font-size: 34px;
+			line-height: 36px;
+			color: $text;
+		}
+		&__info {
+			&__list {
+				display: grid;
+				align-items: center;
+				justify-items: flex-start;
+				row-gap: 30px;
+			}
+			&__text {
+				i {
+					color: $text-second;
+					padding-right: 20px;
+				}
+				span {
+					font-weight: 700;
+					font-size: 18px;
+					line-height: 22px;
+					color: $text;
+				}
+			}
+		}
+	}
+}

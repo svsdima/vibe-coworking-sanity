@@ -1,0 +1,9 @@
+.bookings {
+	&__list {
+		padding-top: 150px;
+		display: grid;
+		align-items: center;
+		justify-items: center;
+		row-gap: 80px;
+	}
+}

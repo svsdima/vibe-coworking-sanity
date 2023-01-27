@@ -1,0 +1,77 @@
+.footer {
+	border-top: 1px solid $gray;
+	border-bottom: 1px solid $gray;
+
+	&__wrapper {
+		padding: 120px 0;
+	}
+	&__top {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 50px;
+		&__left {
+			display: grid;
+			row-gap: 30px;
+			&__info {
+				display: grid;
+				align-items: center;
+				grid-template-columns: 60px 60px 1fr;
+				column-gap: 10px;
+			}
+		}
+	}
+	&__icon {
+		a {
+			width: 35px;
+			height: 35px;
+			padding: 10px;
+			background: $gradient;
+			box-shadow: 0px 2px 4px #f0d8d3;
+			display: grid;
+			align-items: center;
+			justify-items: center;
+			border-radius: 100%;
+		}
+		i {
+			font-size: 30px;
+			color: $text-third;
+		}
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		align-items: center;
+		margin: 0;
+		row-gap: 10px;
+	}
+	&__link {
+		font-size: 16px;
+		line-height: 40px;
+		text-transform: uppercase;
+		color: $text;
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			width: 0;
+			height: 1px;
+			bottom: 0;
+			left: 50%;
+			background-color: $text-second;
+			transform: translateX(-50%);
+			transition: $transition;
+		}
+	}
+}
+.politic {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	padding: 20px 0;
+	a {
+		font-size: 14px;
+		line-height: 34px;
+		text-align: center;
+		color: #a5a5b3;
+	}
+}

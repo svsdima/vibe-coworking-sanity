@@ -1,0 +1,91 @@
+.booking__item {
+	padding-bottom: 80px;
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 80px;
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: $gray;
+	}
+	.item {
+		&__img {
+			position: relative;
+			width: 100%;
+			height: 85%;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			.btn {
+				position: absolute;
+				bottom: -40px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+		&__title {
+			font-family: 'Tenor Sans';
+			font-size: 36px;
+			line-height: 32px;
+			color: $text;
+		}
+		&__descr {
+			font-size: 16px;
+			line-height: 26px;
+			color: $text;
+		}
+		&__weekdays {
+			&::before {
+				content: 'Пн-Пт :';
+			}
+		}
+		&__weekends {
+			&::before {
+				content: 'Сб,Вс :';
+			}
+		}
+		&__weekdays,
+		&__weekends {
+			position: relative;
+			&::before {
+				position: absolute;
+				top: -25px;
+				left: 0;
+				font-weight: 700;
+				font-size: 16px;
+				line-height: 26px;
+				color: $text;
+				text-transform: capitalize;
+			}
+		}
+
+		&__prices {
+			display: grid;
+			row-gap: 10px;
+			&__price {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				align-items: center;
+				column-gap: 30px;
+				text-align: left;
+				h4 {
+					font-size: 40px;
+					line-height: 47px;
+					text-transform: uppercase;
+					color: $text;
+					span {
+						font-size: 20px;
+						line-height: 24px;
+					}
+				}
+			}
+		}
+	}
+}

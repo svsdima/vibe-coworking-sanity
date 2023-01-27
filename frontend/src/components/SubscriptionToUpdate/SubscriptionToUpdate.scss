@@ -1,0 +1,28 @@
+.stu {
+	&__wrapper {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		align-items: center;
+		justify-items: center;
+		background-color: $bg;
+		position: relative;
+		min-height: 500px;
+		padding-right: 20px;
+	}
+	&__info {
+		display: grid;
+		align-items: center;
+		justify-items: center;
+		row-gap: 30px;
+	}
+	&__title {
+		font-family: 'Tenor Sans';
+		font-size: 40px;
+		line-height: 47px;
+		text-align: center;
+		color: #ffffff;
+	}
+	.btn {
+		white-space: nowrap;
+	}
+}

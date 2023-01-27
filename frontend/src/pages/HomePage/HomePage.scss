@@ -1,0 +1,47 @@
+.home {
+	padding: 0 0 100px 0;
+	&__right {
+		padding-left: 50%;
+		margin-top: 70px;
+		max-width: 400px;
+	}
+	&__article {
+		padding: 100px 0;
+	}
+	&__diagram {
+		position: relative;
+		min-height: 500px;
+		.title {
+			padding-left: 100px;
+			text-align: left;
+			position: relative;
+			z-index: 5;
+			&::before {
+				content: 'мы не сидели без дела в предыдущие два года';
+				max-width: 130px;
+				font-style: italic;
+				font-weight: 400;
+				font-size: 13px;
+				line-height: 14px;
+				color: $text;
+				position: absolute;
+				top: -85px;
+				left: 0;
+			}
+			&::after {
+				content: url('../../assets/oval_text.svg');
+				position: absolute;
+				top: -40px;
+				left: 10%;
+			}
+		}
+		&__img {
+			width: 700px;
+			height: 600px;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}

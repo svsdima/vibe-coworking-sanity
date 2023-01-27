@@ -1,0 +1,9 @@
+.coworking {
+	&__list {
+		padding: 150px 0;
+		display: grid;
+		align-items: center;
+		justify-items: center;
+		row-gap: 100px;
+	}
+}

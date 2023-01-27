@@ -1,0 +1,10 @@
+.btn-back {
+	margin-bottom: 50px;
+	.text {
+		cursor: pointer;
+		border: 1px solid $text-second;
+		border-radius: 70px;
+		padding: 5px 10px;
+		color: $text-second;
+	}
+}

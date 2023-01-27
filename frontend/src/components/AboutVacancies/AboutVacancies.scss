@@ -1,0 +1,48 @@
+.about-vacancies {
+	&__wrapper {
+		min-height: 680px;
+		width: 100%;
+		background: url('../../../public/img/vacancies_bg_2.jpg') center (center / cover) no-repeat;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		align-items: center;
+		justify-items: flex-start;
+		margin-bottom: 120px;
+		position: relative;
+	}
+	&__info {
+		padding: 20px 40px;
+	}
+	&__text {
+		font-family: 'Tenor Sans';
+		font-size: 50px;
+		line-height: 58px;
+		text-align: left;
+		color: $text-third;
+		width: 80%;
+		margin: 0;
+		span {
+			color: $text-second;
+		}
+	}
+	&__btn {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		cursor: pointer;
+		background-color: #f8e6e2;
+		border: none;
+		transition: $transition;
+		padding: 40px;
+		border-radius: 100%;
+		i {
+			color: white;
+			font-size: 40px;
+		}
+	}
+	.text {
+		max-width: 400px;
+		color: $text-third;
+	}
+}
