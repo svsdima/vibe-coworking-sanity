@@ -241,4 +241,4 @@ export const vacanciesAdvantages = [
 	},
 ];
 
-export const srcVideo = 'https://www.youtube.com/embed/fpUpVznI4Yc';
+export const srcVideo = 'https://www.youtube.com/embed/R45NxtK8BKE';
